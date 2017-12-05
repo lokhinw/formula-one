@@ -7,6 +7,11 @@
     "jest-expo": "23.0.0",
     "react-test-renderer": "16.0.0"
   },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-native-scripts start",
@@ -22,6 +27,8 @@
     "expo": "^23.0.4",
     "react": "16.0.0",
     "react-native": "0.50.3",
+    "react-native-data-table": "^0.1.6",
+    "react-native-drawer-menu": "^0.2.4",
     "react-native-tab-view": "0.0.70"
   }
 }

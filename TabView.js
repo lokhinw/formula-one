@@ -2,7 +2,8 @@ import React, {PureComponent} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {TabViewAnimated, TabBar, SceneMap} from 'react-native-tab-view';
 import DriverStandings from './DriverStandings';
-import RaceSchedule from './RaceSchedule';
+import ConstructorStandings from './ConstructorStandings';
+
 
 const FirstRoute = () => <View style={[
   styles.container, {
@@ -16,7 +17,7 @@ const SecondRoute = () => <View style={[
     backgroundColor: '#fff'
   }
 ]}>
-  <RaceSchedule></RaceSchedule>
+  <ConstructorStandings></ConstructorStandings>
 </View>;
 
 export default class TabView extends PureComponent {
@@ -28,7 +29,7 @@ export default class TabView extends PureComponent {
         title: 'Driver Standings'
       }, {
         key: '2',
-        title: 'Race Schedule'
+        title: 'Team Standings'
       }
     ]
   };
@@ -46,6 +47,6 @@ export default class TabView extends PureComponent {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   }
 });
