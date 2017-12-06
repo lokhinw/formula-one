@@ -1,10 +1,12 @@
 import React from 'react';
 import {
   StyleSheet,
+  Alert,
   Text,
   View,
   ActivityIndicator,
   ListView,
+  TouchableWithoutFeedback,
   Image
 } from 'react-native';
 
@@ -28,6 +30,9 @@ export default class DriverStandings extends React.Component {
       console.error(error);
     });
   }
+  onDriverCard = (driverCode) => {
+    Alert.alert(driverCode);
+  }
   render() {
     if (this.state.isLoading) {
       return (
@@ -39,31 +44,33 @@ export default class DriverStandings extends React.Component {
         </View>
       );
     }
-    return (<ListView dataSource={this.state.driverStandings} renderRow={(rowData) => <View style={styles.driver}>
-      <View style={styles.avatarContainer}>
-        <Image source={{
-          uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Drivers/' + rowData.Driver.code + '.jpg'
-        }} style={styles.avatar}></Image>
-      </View>
-      <View style={styles.driverInfo}>
-        <View style={{
-          flex: 1,
-          flexDirection: 'row'
-        }}>
-          <Text style={styles.permanentNumber}>{rowData.Driver.permanentNumber}</Text>
-          <Text style={styles.driverName}>{rowData.Driver.givenName} {rowData.Driver.familyName}</Text>
+    return (<ListView dataSource={this.state.driverStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.onDriverCard(rowData.Driver.code)}>
+      <View style={styles.driver}>
+        <View style={styles.avatarContainer}>
+          <Image source={{
+            uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Drivers/' + rowData.Driver.code + '.jpg'
+          }} style={styles.avatar}></Image>
         </View>
-        <View style={{
-          flex: 1
-        }}>
-          <Text style={styles.constructorName}>{rowData.Constructors[0].name}</Text>
+        <View style={styles.driverInfo}>
+          <View style={{
+            flex: 1,
+            flexDirection: 'row'
+          }}>
+            <Text style={styles.permanentNumber}>{rowData.Driver.permanentNumber}</Text>
+            <Text style={styles.driverName}>{rowData.Driver.givenName} {rowData.Driver.familyName}</Text>
+          </View>
+          <View style={{
+            flex: 1
+          }}>
+            <Text style={styles.constructorName}>{rowData.Constructors[0].name}</Text>
+          </View>
+        </View>
+        <View style={styles.driverStats}>
+          <Text style={styles.wins}>{rowData.wins}</Text>
+          <Text style={styles.points}>{rowData.points}</Text>
         </View>
       </View>
-      <View style={styles.driverStats}>
-        <Text style={styles.wins}>{rowData.wins}</Text>
-        <Text style={styles.points}>{rowData.points}</Text>
-      </View>
-    </View>}/>);
+    </TouchableWithoutFeedback>}/>);
   }
 }
 

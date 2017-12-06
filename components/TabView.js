@@ -4,6 +4,9 @@ import {TabViewAnimated, TabBar, SceneMap} from 'react-native-tab-view';
 import DriverStandings from './DriverStandings';
 import ConstructorStandings from './ConstructorStandings';
 
+// TEMPORARY
+import DriverCard from './DriverCard';
+
 
 const FirstRoute = () => <View style={[
   styles.container, {
@@ -11,6 +14,7 @@ const FirstRoute = () => <View style={[
   }
 ]}>
   <DriverStandings></DriverStandings>
+  {/* <DriverCard driverId='hamilton'></DriverCard> */}
 </View>;
 const SecondRoute = () => <View style={[
   styles.container, {
