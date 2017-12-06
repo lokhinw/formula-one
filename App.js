@@ -5,8 +5,7 @@ export default class App extends React.Component {
   constructor(props) {
     super();
   }
-  componentDidMount() {
-  }
+  componentDidMount() {}
   render() {
     return (
       <TabView></TabView>

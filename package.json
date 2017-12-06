@@ -29,6 +29,7 @@
     "react-native": "0.50.3",
     "react-native-data-table": "^0.1.6",
     "react-native-drawer-menu": "^0.2.4",
-    "react-native-tab-view": "0.0.70"
+    "react-native-tab-view": "0.0.70",
+    "react-navigation": "^1.0.0-beta.21"
   }
 }

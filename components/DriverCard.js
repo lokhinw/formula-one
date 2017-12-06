@@ -8,7 +8,7 @@ import {
   Image
 } from 'react-native';
 
-export default class DriverStandings extends React.Component {
+export default class DriverCard extends React.Component {
   constructor(props) {
     super();
     this.state = {
