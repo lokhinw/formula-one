@@ -46,11 +46,24 @@ export default class RaceSchedule extends React.Component {
         </View>
       );
     }
-    return (<ListView dataSource={this.state.raceSchedule} renderRow={(rowData) => <View style={{}}>
-      <Text>{rowData.raceName}</Text>
-      <Text>{rowData.Circuit.Location.locality}</Text>
-      <Text>{months[Number(rowData.date.substring(5,7)) - 1]} {rowData.date.substring(8, 10)}</Text>
-      <Text>{rowData.time.substring(0, 5)}</Text>
+    return (<ListView dataSource={this.state.raceSchedule} renderRow={(rowData) => <View style={{
+      flex: 1,
+      flexDirection: 'row',
+      marginTop: 10
+    }}>
+      <View style={{
+        flex: 1,
+        marginLeft: 40,
+      }}>
+        <Text style={styles.dateTime}>{months[Number(rowData.date.substring(5, 7)) - 1]} {rowData.date.substring(8, 10)}</Text>
+        <Text style={styles.dateTime}>{rowData.time.substring(0, 5)}</Text>
+      </View>
+      <View style={{
+        flex: 3
+      }}>
+        <Text style={styles.raceName}>{rowData.raceName}</Text>
+        <Text style={styles.raceLocation}>{rowData.Circuit.Location.locality}</Text>
+      </View>
     </View>}/>);
   }
 }
@@ -61,5 +74,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  dateTime: {
+    color: '#d91e18',
+    fontSize: 12
+  },
+  raceName: {
+    color: '#12242b',
+    fontSize: 14
+  },
+  raceLocation: {
+    color: '#dbd9d9',
+    fontSize: 12
   }
 });
