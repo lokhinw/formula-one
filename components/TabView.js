@@ -6,16 +6,18 @@ import ConstructorStandings from './ConstructorStandings';
 
 // TEMPORARY
 import DriverCard from './DriverCard';
-import ConstructorCard from './ConstructorCard'
+import ConstructorCard from './ConstructorCard';
 
+import DriverNavigator from './DriverNavigator';
 const FirstRoute = () => <View style={[
   styles.container, {
     backgroundColor: '#fff'
   }
 ]}>
   {/* <DriverStandings></DriverStandings> */}
+  <DriverNavigator></DriverNavigator>
   {/* <DriverCard driverId='hamilton'></DriverCard> */}
-  <ConstructorCard constructorId='ferrari'></ConstructorCard>
+  {/* <ConstructorCard constructorId='ferrari'></ConstructorCard> */}
 </View>;
 const SecondRoute = () => <View style={[
   styles.container, {

@@ -16,7 +16,7 @@ export default class DriverCard extends React.Component {
     };
   }
   componentDidMount() {
-    return fetch('http://ergast.com/api/f1/drivers/' + this.props.driverId + '.json').then((response) => response.json()).then((responseJson) => {
+    return fetch('http://ergast.com/api/f1/drivers/' + this.props.navigation.state.params.driverId + '.json').then((response) => response.json()).then((responseJson) => {
       let ds = new ListView.DataSource({
         rowHasChanged: (r1, r2) => r1 !== r2
       });
@@ -81,13 +81,17 @@ export default class DriverCard extends React.Component {
           <View style={{
             flexDirection: 'row'
           }}>
-            <Text style={{color: '#afbbce'}}>Nationality: </Text>
+            <Text style={{
+              color: '#afbbce'
+            }}>Nationality: </Text>
             <Text>{rowData.nationality}</Text>
           </View>
           <View style={{
             flexDirection: 'row'
           }}>
-            <Text style={{color: '#afbbce'}}>Date Of Birth: </Text>
+            <Text style={{
+              color: '#afbbce'
+            }}>Date Of Birth: </Text>
             <Text>{(rowData.dateOfBirth).substring(8, 11)}/{(rowData.dateOfBirth).substring(5, 7)}/{(rowData.dateOfBirth).substring(0, 4)}</Text>
           </View>
           <View style={{

@@ -10,6 +10,8 @@ import {
   Image
 } from 'react-native';
 
+import {StackNavigator} from 'react-navigation';
+
 export default class DriverStandings extends React.Component {
   constructor(props) {
     super();
@@ -34,6 +36,7 @@ export default class DriverStandings extends React.Component {
     Alert.alert(driverCode);
   }
   render() {
+    var {navigate} = this.props.navigation;
     if (this.state.isLoading) {
       return (
         <View style={{
@@ -44,7 +47,7 @@ export default class DriverStandings extends React.Component {
         </View>
       );
     }
-    return (<ListView dataSource={this.state.driverStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.onDriverCard(rowData.Driver.code)}>
+    return (<ListView dataSource={this.state.driverStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('DriverCard', {driverId: rowData.Driver.driverId})}>
       <View style={styles.driver}>
         <View style={styles.avatarContainer}>
           <Image source={{
