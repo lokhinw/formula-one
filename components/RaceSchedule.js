@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, View, ActivityIndicator, ListView} from 'react-native';
+import {StyleSheet, Text, View, ActivityIndicator, TouchableWithoutFeedback, ListView} from 'react-native';
+import {StackNavigator} from 'react-navigation';
 
 export default class RaceSchedule extends React.Component {
   constructor(props) {
@@ -46,25 +47,27 @@ export default class RaceSchedule extends React.Component {
         </View>
       );
     }
-    return (<ListView dataSource={this.state.raceSchedule} renderRow={(rowData) => <View style={{
-      flex: 1,
-      flexDirection: 'row',
-      marginTop: 10
-    }}>
+    return (<ListView dataSource={this.state.raceSchedule} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('RaceCard', {circuitId: rowData.Circuit.circuitId})}>
       <View style={{
         flex: 1,
-        marginLeft: 40,
+        flexDirection: 'row',
+        marginTop: 10
       }}>
-        <Text style={styles.dateTime}>{months[Number(rowData.date.substring(5, 7)) - 1]} {rowData.date.substring(8, 10)}</Text>
-        <Text style={styles.dateTime}>{rowData.time.substring(0, 5)}</Text>
+        <View style={{
+          flex: 1,
+          marginLeft: 40
+        }}>
+          <Text style={styles.dateTime}>{months[Number(rowData.date.substring(5, 7)) - 1]} {rowData.date.substring(8, 10)}</Text>
+          <Text style={styles.dateTime}>{rowData.time.substring(0, 5)}</Text>
+        </View>
+        <View style={{
+          flex: 3
+        }}>
+          <Text style={styles.raceName}>{rowData.raceName}</Text>
+          <Text style={styles.raceLocation}>{rowData.Circuit.Location.locality}</Text>
+        </View>
       </View>
-      <View style={{
-        flex: 3
-      }}>
-        <Text style={styles.raceName}>{rowData.raceName}</Text>
-        <Text style={styles.raceLocation}>{rowData.Circuit.Location.locality}</Text>
-      </View>
-    </View>}/>);
+    </TouchableWithoutFeedback>}/>);
   }
 }
 

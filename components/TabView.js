@@ -10,6 +10,7 @@ import RaceCard from './RaceCard';
 import ConstructorCard from './ConstructorCard';
 import RaceSchedule from './RaceSchedule';
 import DriverNavigator from './DriverNavigator';
+import RaceNavigator from './RaceNavigator';
 
 const FirstRoute = () => <View style={[
   styles.container, {
@@ -19,7 +20,8 @@ const FirstRoute = () => <View style={[
   {/* <DriverStandings></DriverStandings> */}
   {/* <DriverNavigator></DriverNavigator> */}
   {/* <RaceSchedule></RaceSchedule> */}
-  <RaceCard></RaceCard>
+  {/* <RaceCard></RaceCard> */}
+  <RaceNavigator></RaceNavigator>
   {/* <DriverCard driverId='hamilton'></DriverCard> */}
   {/* <ConstructorCard constructorId='ferrari'></ConstructorCard> */}
 </View>;

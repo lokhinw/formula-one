@@ -5,7 +5,8 @@ import {
   View,
   ActivityIndicator,
   ListView,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 export default class RaceCard extends React.Component {
@@ -16,8 +17,7 @@ export default class RaceCard extends React.Component {
     };
   }
   componentDidMount() {
-    // this.props.navigation.state.params.circuitId
-    return fetch('http://ergast.com/api/f1/circuits/' + 'sochi' + '.json').then((response) => response.json()).then((responseJson) => {
+    return fetch('http://ergast.com/api/f1/circuits/' + this.props.navigation.state.params.circuitId + '.json').then((response) => response.json()).then((responseJson) => {
       let ds = new ListView.DataSource({
         rowHasChanged: (r1, r2) => r1 !== r2
       });
@@ -48,11 +48,13 @@ export default class RaceCard extends React.Component {
         }}>
           <Image source={{
             uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Cirius/' + rowData.circuitId + '.png'
-          }} style={{height: 167, width: 256}}></Image>
+          }} style={styles.map}></Image>
       </View>
     </View>}/>);
   }
 }
+
+const { width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   container: {
@@ -60,5 +62,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  map: {
+    width: width - 20,
+    height: ((width - 20) / 1.53293413)
   }
 });

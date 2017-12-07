@@ -32,9 +32,6 @@ export default class DriverStandings extends React.Component {
       console.error(error);
     });
   }
-  onDriverCard = (driverCode) => {
-    Alert.alert(driverCode);
-  }
   render() {
     var {navigate} = this.props.navigation;
     if (this.state.isLoading) {
