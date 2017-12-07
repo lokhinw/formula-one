@@ -6,6 +6,7 @@ import ConstructorStandings from './ConstructorStandings';
 
 // TEMPORARY
 import DriverCard from './DriverCard';
+import RaceCard from './RaceCard';
 import ConstructorCard from './ConstructorCard';
 import RaceSchedule from './RaceSchedule';
 import DriverNavigator from './DriverNavigator';
@@ -17,7 +18,8 @@ const FirstRoute = () => <View style={[
 ]}>
   {/* <DriverStandings></DriverStandings> */}
   {/* <DriverNavigator></DriverNavigator> */}
-  <RaceSchedule></RaceSchedule>
+  {/* <RaceSchedule></RaceSchedule> */}
+  <RaceCard></RaceCard>
   {/* <DriverCard driverId='hamilton'></DriverCard> */}
   {/* <ConstructorCard constructorId='ferrari'></ConstructorCard> */}
 </View>;
