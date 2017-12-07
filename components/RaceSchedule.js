@@ -22,6 +22,20 @@ export default class RaceSchedule extends React.Component {
     });
   }
   render() {
+    var months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ];
     if (this.state.isLoading) {
       return (
         <View style={{
@@ -32,14 +46,12 @@ export default class RaceSchedule extends React.Component {
         </View>
       );
     }
-    return (
-      <View style={{
-        flex: 1,
-        paddingTop: 20
-      }}>
-      <ListView dataSource={this.state.raceSchedule} renderRow={(rowData) => <Text>{rowData.raceName}</Text>}/>
-      </View>
-    );
+    return (<ListView dataSource={this.state.raceSchedule} renderRow={(rowData) => <View style={{}}>
+      <Text>{rowData.raceName}</Text>
+      <Text>{rowData.Circuit.Location.locality}</Text>
+      <Text>{months[Number(rowData.date.substring(5,7)) - 1]} {rowData.date.substring(8, 10)}</Text>
+      <Text>{rowData.time.substring(0, 5)}</Text>
+    </View>}/>);
   }
 }
 

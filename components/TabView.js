@@ -7,15 +7,17 @@ import ConstructorStandings from './ConstructorStandings';
 // TEMPORARY
 import DriverCard from './DriverCard';
 import ConstructorCard from './ConstructorCard';
-
+import RaceSchedule from './RaceSchedule';
 import DriverNavigator from './DriverNavigator';
+
 const FirstRoute = () => <View style={[
   styles.container, {
     backgroundColor: '#fff'
   }
 ]}>
   {/* <DriverStandings></DriverStandings> */}
-  <DriverNavigator></DriverNavigator>
+  {/* <DriverNavigator></DriverNavigator> */}
+  <RaceSchedule></RaceSchedule>
   {/* <DriverCard driverId='hamilton'></DriverCard> */}
   {/* <ConstructorCard constructorId='ferrari'></ConstructorCard> */}
 </View>;
