@@ -44,41 +44,68 @@ export default class DriverStandings extends React.Component {
         </View>
       );
     }
-    return (<View>
-      <View  style={{flexDirection: 'row', backgroundColor: '#25303a', paddingLeft: 30, paddingRight: 10}}>
-        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, marginRight: 32}}>#</ScalableText>
-        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, flex: 1}}>Driver</ScalableText>
-        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, marginRight: 20}}>Wins</ScalableText>
-        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, textAlign: 'right'}}>Points</ScalableText>
-      </View>
-
-      <ListView dataSource={this.state.driverStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('DriverCard', {driverId: rowData.Driver.driverId})}>
-      <View style={styles.driver}>
-        <View style={styles.avatarContainer}>
-          <Image source={{
-            uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Drivers/' + rowData.Driver.code + '.jpg'
-          }} style={styles.avatar}></Image>
-        </View>
-        <View style={styles.driverInfo}>
-          <View style={{
-            flex: 1,
-            flexDirection: 'row'
-          }}>
-            <ScalableText style={styles.permanentNumber}>{rowData.Driver.permanentNumber}</ScalableText>
-            <ScalableText style={styles.driverName}>{rowData.Driver.givenName} {rowData.Driver.familyName}</ScalableText>
-          </View>
-          <View style={{
+    return (
+      <View>
+        <View style={{
+          flexDirection: 'row',
+          backgroundColor: '#25303a',
+          paddingLeft: 30,
+          paddingRight: 10
+        }}>
+          <ScalableText style={{
+            color: '#fff',
+            height: 22,
+            lineHeight: 20,
+            marginRight: 32
+          }}>#</ScalableText>
+          <ScalableText style={{
+            color: '#fff',
+            height: 22,
+            lineHeight: 20,
             flex: 1
-          }}>
-            <ScalableText style={styles.constructorName}>{rowData.Constructors[0].name}</ScalableText>
+          }}>Driver</ScalableText>
+          <ScalableText style={{
+            color: '#fff',
+            height: 22,
+            lineHeight: 20,
+            marginRight: 20
+          }}>Wins</ScalableText>
+          <ScalableText style={{
+            color: '#fff',
+            height: 22,
+            lineHeight: 20,
+            textAlign: 'right'
+          }}>Points</ScalableText>
+        </View>
+
+        <ListView dataSource={this.state.driverStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('DriverCard', {driverId: rowData.Driver.driverId})}>
+          <View style={styles.driver}>
+            <View style={styles.avatarContainer}>
+              <Image source={{
+                uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Drivers/' + rowData.Driver.code + '.jpg'
+              }} style={styles.avatar}></Image>
+            </View>
+            <View style={styles.driverInfo}>
+              <View style={{
+                flex: 1,
+                flexDirection: 'row'
+              }}>
+                <ScalableText style={styles.permanentNumber}>{rowData.Driver.permanentNumber}</ScalableText>
+                <ScalableText style={styles.driverName}>{rowData.Driver.givenName} {rowData.Driver.familyName}</ScalableText>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <ScalableText style={styles.constructorName}>{rowData.Constructors[0].name}</ScalableText>
+              </View>
+            </View>
+            <View style={styles.driverStats}>
+              <ScalableText style={styles.wins}>{rowData.wins}</ScalableText>
+              <ScalableText style={styles.points}>{rowData.points}</ScalableText>
+            </View>
           </View>
-        </View>
-        <View style={styles.driverStats}>
-          <ScalableText style={styles.wins}>{rowData.wins}</ScalableText>
-          <ScalableText style={styles.points}>{rowData.points}</ScalableText>
-        </View>
-      </View>
-    </TouchableWithoutFeedback>}/></View>);
+        </TouchableWithoutFeedback>}/></View>
+    );
   }
 }
 
