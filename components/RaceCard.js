@@ -53,10 +53,11 @@ export default class RaceCard extends React.Component {
         </View>
         <View style={{
           flex: 1,
-          flexDirection: 'row'
+          flexDirection: 'row',
+          marginHorizontal: 10
         }}>
           <View style={{
-            flex: 1
+            flex: 1, marginRight: 10
           }}>
             <View style={{
               flex: 1,
@@ -70,7 +71,7 @@ export default class RaceCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <ScalableText>{this.state.circuitInfo.laps}</ScalableText>
+                <ScalableText style={{textAlign: 'right', fontSize: 24}}>{this.state.circuitInfo.laps}</ScalableText>
               </View>
             </View>
             <View style={{
@@ -85,12 +86,13 @@ export default class RaceCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <ScalableText>{this.state.circuitInfo.firstGP}</ScalableText>
+                <ScalableText style={{textAlign: 'right', fontSize: 24}}>{this.state.circuitInfo.firstGP}</ScalableText>
               </View>
             </View>
           </View>
           <View style={{
-            flex: 1
+            flex: 1,
+            marginLeft: 10
           }}>
             <View style={{
               flex: 1,
@@ -104,7 +106,7 @@ export default class RaceCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <ScalableText>{this.state.circuitInfo.length}</ScalableText>
+                <ScalableText style={{textAlign:'right', fontSize: 24}}>{this.state.circuitInfo.length}</ScalableText>
               </View>
             </View>
             <View style={{
@@ -117,9 +119,9 @@ export default class RaceCard extends React.Component {
                 <ScalableText>Race Distance</ScalableText>
               </View>
               <View style={{
-                flex: 1
+                flex: 2
               }}>
-                <ScalableText>{this.state.circuitInfo.raceDistance}</ScalableText>
+                <ScalableText style={{textAlign:'right', fontSize: 24}}>{this.state.circuitInfo.raceDistance}</ScalableText>
               </View>
             </View>
           </View>
