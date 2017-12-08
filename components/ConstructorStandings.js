@@ -8,6 +8,7 @@ import {
   Image,
   TouchableWithoutFeedback
 } from 'react-native';
+import ScalableText from 'react-native-text';
 import {StackNavigator} from 'react-navigation';
 
 export default class ConstructorStandings extends React.Component {
@@ -45,12 +46,12 @@ export default class ConstructorStandings extends React.Component {
         <ListView dataSource={this.state.constructorStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ConstructorCard', {constructorId: rowData.Constructor.constructorId})}>
            <View style={styles.constructor}>
           <View style={styles.constructorInfo}>
-          <Text style={styles.constructorPosition}>{rowData.position}</Text>
-          <Text style={styles.constructorName}>{rowData.Constructor.name}</Text>
+          <ScalableText style={styles.constructorPosition}>{rowData.position}</ScalableText>
+          <ScalableText style={styles.constructorName}>{rowData.Constructor.name}</ScalableText>
         </View>
         <View style={styles.constructorStats}>
-          <Text style={styles.wins}>{rowData.wins}</Text>
-          <Text style={styles.points}>{rowData.points}</Text>
+          <ScalableText style={styles.wins}>{rowData.wins}</ScalableText>
+          <ScalableText style={styles.points}>{rowData.points}</ScalableText>
         </View>
       </View></TouchableWithoutFeedback>}/>
     );

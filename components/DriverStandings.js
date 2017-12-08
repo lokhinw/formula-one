@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback,
   Image
 } from 'react-native';
-
+import ScalableText from 'react-native-text';
 import {StackNavigator} from 'react-navigation';
 
 export default class DriverStandings extends React.Component {
@@ -56,18 +56,18 @@ export default class DriverStandings extends React.Component {
             flex: 1,
             flexDirection: 'row'
           }}>
-            <Text style={styles.permanentNumber}>{rowData.Driver.permanentNumber}</Text>
-            <Text style={styles.driverName}>{rowData.Driver.givenName} {rowData.Driver.familyName}</Text>
+            <ScalableText style={styles.permanentNumber}>{rowData.Driver.permanentNumber}</ScalableText>
+            <ScalableText style={styles.driverName}>{rowData.Driver.givenName} {rowData.Driver.familyName}</ScalableText>
           </View>
           <View style={{
             flex: 1
           }}>
-            <Text style={styles.constructorName}>{rowData.Constructors[0].name}</Text>
+            <ScalableText style={styles.constructorName}>{rowData.Constructors[0].name}</ScalableText>
           </View>
         </View>
         <View style={styles.driverStats}>
-          <Text style={styles.wins}>{rowData.wins}</Text>
-          <Text style={styles.points}>{rowData.points}</Text>
+          <ScalableText style={styles.wins}>{rowData.wins}</ScalableText>
+          <ScalableText style={styles.points}>{rowData.points}</ScalableText>
         </View>
       </View>
     </TouchableWithoutFeedback>}/>);

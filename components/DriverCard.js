@@ -7,6 +7,7 @@ import {
   ListView,
   Image
 } from 'react-native';
+import ScalableText from 'react-native-text';
 
 export default class DriverCard extends React.Component {
   constructor(props) {
@@ -64,15 +65,15 @@ export default class DriverCard extends React.Component {
             marginTop: 10
           }}>
             <View>
-              <Text style={styles.permanentNumber}>{rowData.permanentNumber}</Text>
+              <ScalableText style={styles.permanentNumber}>{rowData.permanentNumber}</ScalableText>
             </View>
             <View style={{
               flex: 1
             }}>
-              <Text style={{}}>{rowData.givenName}</Text>
-              <Text style={{
+              <ScalableText style={{}}>{rowData.givenName}</ScalableText>
+              <ScalableText style={{
                 lineHeight: 10
-              }}>{rowData.familyName}</Text>
+              }}>{rowData.familyName}</ScalableText>
             </View>
             <Image source={{
               uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Flags/' + rowData.nationality + '.png'
@@ -81,18 +82,18 @@ export default class DriverCard extends React.Component {
           <View style={{
             flexDirection: 'row'
           }}>
-            <Text style={{
+            <ScalableText style={{
               color: '#afbbce'
-            }}>Nationality: </Text>
-            <Text>{rowData.nationality}</Text>
+            }}>Nationality: </ScalableText>
+            <ScalableText>{rowData.nationality}</ScalableText>
           </View>
           <View style={{
             flexDirection: 'row'
           }}>
-            <Text style={{
+            <ScalableText style={{
               color: '#afbbce'
-            }}>Date Of Birth: </Text>
-            <Text>{(rowData.dateOfBirth).substring(8, 11)}/{(rowData.dateOfBirth).substring(5, 7)}/{(rowData.dateOfBirth).substring(0, 4)}</Text>
+            }}>Date Of Birth: </ScalableText>
+            <ScalableText>{(rowData.dateOfBirth).substring(8, 11)}/{(rowData.dateOfBirth).substring(5, 7)}/{(rowData.dateOfBirth).substring(0, 4)}</ScalableText>
           </View>
           <View style={{
             flex: 1,

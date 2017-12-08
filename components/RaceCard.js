@@ -8,6 +8,7 @@ import {
   Image,
   Dimensions
 } from 'react-native';
+import ScalableText from 'react-native-text';
 
 export default class RaceCard extends React.Component {
   constructor(props) {
@@ -64,12 +65,12 @@ export default class RaceCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <Text>Number of Laps</Text>
+                <ScalableText>Number of Laps</ScalableText>
               </View>
               <View style={{
                 flex: 1
               }}>
-                <Text>{this.state.circuitInfo.laps}</Text>
+                <ScalableText>{this.state.circuitInfo.laps}</ScalableText>
               </View>
             </View>
             <View style={{
@@ -79,12 +80,12 @@ export default class RaceCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <Text>First Grand Prix</Text>
+                <ScalableText>First Grand Prix</ScalableText>
               </View>
               <View style={{
                 flex: 1
               }}>
-                <Text>{this.state.circuitInfo.firstGP}</Text>
+                <ScalableText>{this.state.circuitInfo.firstGP}</ScalableText>
               </View>
             </View>
           </View>
@@ -98,12 +99,12 @@ export default class RaceCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <Text>Circuit Length (km)</Text>
+                <ScalableText>Circuit Length (km)</ScalableText>
               </View>
               <View style={{
                 flex: 1
               }}>
-                <Text>{this.state.circuitInfo.length}</Text>
+                <ScalableText>{this.state.circuitInfo.length}</ScalableText>
               </View>
             </View>
             <View style={{
@@ -113,12 +114,12 @@ export default class RaceCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <Text>Race Distance</Text>
+                <ScalableText>Race Distance</ScalableText>
               </View>
               <View style={{
                 flex: 1
               }}>
-                <Text>{this.state.circuitInfo.raceDistance}</Text>
+                <ScalableText>{this.state.circuitInfo.raceDistance}</ScalableText>
               </View>
             </View>
           </View>

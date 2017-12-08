@@ -8,6 +8,7 @@ import {
   Image,
   Dimensions
 } from 'react-native';
+import ScalableText from 'react-native-text'
 
 export default class ConstructorCard extends React.Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export default class ConstructorCard extends React.Component {
           uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Cars/' + this.props.navigation.state.params.constructorId + '.jpg'
         }} style={styles.car}></Image>
       </View>
-      <Text>{this.state.constructorInfo.races}</Text>
+      <ScalableText>{this.state.constructorInfo.races}</ScalableText>
 
     </View>);
   }

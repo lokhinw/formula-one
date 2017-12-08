@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, ActivityIndicator, TouchableWithoutFeedback, ListView} from 'react-native';
 import {StackNavigator} from 'react-navigation';
+import ScalableText from 'react-native-text';
 
 export default class RaceSchedule extends React.Component {
   constructor(props) {
@@ -57,14 +58,14 @@ export default class RaceSchedule extends React.Component {
           flex: 1,
           marginLeft: 40
         }}>
-          <Text style={styles.dateTime}>{months[Number(rowData.date.substring(5, 7)) - 1]} {rowData.date.substring(8, 10)}</Text>
-          <Text style={styles.dateTime}>{rowData.time.substring(0, 5)}</Text>
+          <ScalableText style={styles.dateTime}>{months[Number(rowData.date.substring(5, 7)) - 1]} {rowData.date.substring(8, 10)}</ScalableText>
+          <ScalableText style={styles.dateTime}>{rowData.time.substring(0, 5)}</ScalableText>
         </View>
         <View style={{
           flex: 3
         }}>
-          <Text style={styles.raceName}>{rowData.raceName}</Text>
-          <Text style={styles.raceLocation}>{rowData.Circuit.Location.locality}</Text>
+          <ScalableText style={styles.raceName}>{rowData.raceName}</ScalableText>
+          <ScalableText style={styles.raceLocation}>{rowData.Circuit.Location.locality}</ScalableText>
         </View>
       </View>
     </TouchableWithoutFeedback>}/>);
