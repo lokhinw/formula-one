@@ -16,7 +16,7 @@ export default class ConstructorCard extends React.Component {
     };
   }
   componentDidMount() {
-    return fetch('http://ergast.com/api/f1/constructors/' + this.props.constructorId + '.json').then((response) => response.json()).then((responseJson) => {
+    return fetch('http://ergast.com/api/f1/constructors/' + this.props.navigation.state.params.constructorId + '.json').then((response) => response.json()).then((responseJson) => {
       let ds = new ListView.DataSource({
         rowHasChanged: (r1, r2) => r1 !== r2
       });

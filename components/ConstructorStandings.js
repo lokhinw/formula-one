@@ -5,8 +5,10 @@ import {
   View,
   ActivityIndicator,
   ListView,
-  Image
+  Image,
+  TouchableWithoutFeedback
 } from 'react-native';
+import {StackNavigator} from 'react-navigation';
 
 export default class ConstructorStandings extends React.Component {
   constructor(props) {
@@ -40,7 +42,8 @@ export default class ConstructorStandings extends React.Component {
       );
     }
     return (
-        <ListView dataSource={this.state.constructorStandings} renderRow={(rowData) => <View style={styles.constructor}>
+        <ListView dataSource={this.state.constructorStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ConstructorCard', {constructorId: rowData.Constructor.constructorId})}>
+           <View style={styles.constructor}>
           <View style={styles.constructorInfo}>
           <Text style={styles.constructorPosition}>{rowData.position}</Text>
           <Text style={styles.constructorName}>{rowData.Constructor.name}</Text>
@@ -49,7 +52,7 @@ export default class ConstructorStandings extends React.Component {
           <Text style={styles.wins}>{rowData.wins}</Text>
           <Text style={styles.points}>{rowData.points}</Text>
         </View>
-        </View>}/>
+      </View></TouchableWithoutFeedback>}/>
     );
   }
 }

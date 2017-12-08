@@ -11,6 +11,7 @@ import ConstructorCard from './ConstructorCard';
 import RaceSchedule from './RaceSchedule';
 import DriverNavigator from './DriverNavigator';
 import RaceNavigator from './RaceNavigator';
+import ConstructorNavigator from './ConstructorNavigator';
 
 const FirstRoute = () => <View style={[
   styles.container, {
@@ -30,7 +31,8 @@ const SecondRoute = () => <View style={[
     backgroundColor: '#fff'
   }
 ]}>
-  <ConstructorStandings></ConstructorStandings>
+  {/* <ConstructorStandings></ConstructorStandings> */}
+  <ConstructorNavigator></ConstructorNavigator>
 </View>;
 
 export default class TabView extends PureComponent {
