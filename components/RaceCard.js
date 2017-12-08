@@ -17,13 +17,10 @@ export default class RaceCard extends React.Component {
     };
   }
   componentDidMount() {
-    return fetch('http://ergast.com/api/f1/circuits/' + this.props.navigation.state.params.circuitId + '.json').then((response) => response.json()).then((responseJson) => {
-      let ds = new ListView.DataSource({
-        rowHasChanged: (r1, r2) => r1 !== r2
-      });
+    return fetch('https://bsbbycpjma.execute-api.eu-central-1.amazonaws.com/latest/f1/circuit/' + this.props.navigation.state.params.circuitId + '/details').then((response) => response.json()).then((responseJson) => {
       this.setState({
         isLoading: false,
-        circuitInfo: ds.cloneWithRows(responseJson.MRData.CircuitTable.Circuits)
+        circuitInfo: responseJson
       }, function() {});
     }).catch((error) => {
       console.error(error);
@@ -40,21 +37,98 @@ export default class RaceCard extends React.Component {
         </View>
       );
     }
-    return (<ListView dataSource={this.state.circuitInfo} renderRow={(rowData) => <View style={{}}>
+    return (
+      <View style={{
+        flex: 1
+      }}>
         <View style={{
           flex: 1,
           marginLeft: 10,
           marginTop: 10
         }}>
           <Image source={{
-            uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Cirius/' + rowData.circuitId + '.png'
+            uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Cirius/' + this.state.circuitInfo.circuitId + '.png'
           }} style={styles.map}></Image>
+        </View>
+        <View style={{
+          flex: 1,
+          flexDirection: 'row'
+        }}>
+          <View style={{
+            flex: 1
+          }}>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                flex: 1
+              }}>
+                <Text>Number of Laps</Text>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <Text>{this.state.circuitInfo.laps}</Text>
+              </View>
+            </View>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                flex: 1
+              }}>
+                <Text>First Grand Prix</Text>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <Text>{this.state.circuitInfo.firstGP}</Text>
+              </View>
+            </View>
+          </View>
+          <View style={{
+            flex: 1
+          }}>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                flex: 1
+              }}>
+                <Text>Circuit Length (km)</Text>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <Text>{this.state.circuitInfo.length}</Text>
+              </View>
+            </View>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                flex: 1
+              }}>
+                <Text>Race Distance</Text>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <Text>{this.state.circuitInfo.raceDistance}</Text>
+              </View>
+            </View>
+          </View>
+        </View>
       </View>
-    </View>}/>);
+    );
   }
 }
 
-const { width } = Dimensions.get('window')
+const {width} = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   container: {
