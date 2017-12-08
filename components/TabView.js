@@ -18,10 +18,10 @@ const FirstRoute = () => <View style={[
   }
 ]}>
   {/* <DriverStandings></DriverStandings> */}
-  {/* <DriverNavigator></DriverNavigator> */}
+  <DriverNavigator></DriverNavigator>
   {/* <RaceSchedule></RaceSchedule> */}
   {/* <RaceCard></RaceCard> */}
-  <RaceNavigator></RaceNavigator>
+  {/* <RaceNavigator></RaceNavigator> */}
   {/* <DriverCard driverId='hamilton'></DriverCard> */}
   {/* <ConstructorCard constructorId='ferrari'></ConstructorCard> */}
 </View>;
