@@ -42,7 +42,13 @@ export default class ConstructorStandings extends React.Component {
         </View>
       );
     }
-    return (
+    return (<View>
+      <View  style={{flexDirection: 'row', backgroundColor: '#25303a', paddingLeft: 20, paddingRight: 10}}>
+        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, marginRight: 32}}>#</ScalableText>
+        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, flex: 1}}>Constructor</ScalableText>
+        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, marginRight: 20}}>Wins</ScalableText>
+        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, textAlign: 'right'}}>Points</ScalableText>
+      </View>
         <ListView dataSource={this.state.constructorStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ConstructorCard', {constructorId: rowData.Constructor.constructorId})}>
            <View style={styles.constructor}>
           <View style={styles.constructorInfo}>
@@ -54,6 +60,7 @@ export default class ConstructorStandings extends React.Component {
           <ScalableText style={styles.points}>{rowData.points}</ScalableText>
         </View>
       </View></TouchableWithoutFeedback>}/>
+    </View>
     );
   }
 }

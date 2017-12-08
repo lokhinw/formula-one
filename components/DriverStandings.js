@@ -44,7 +44,15 @@ export default class DriverStandings extends React.Component {
         </View>
       );
     }
-    return (<ListView dataSource={this.state.driverStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('DriverCard', {driverId: rowData.Driver.driverId})}>
+    return (<View>
+      <View  style={{flexDirection: 'row', backgroundColor: '#25303a', paddingLeft: 30, paddingRight: 10}}>
+        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, marginRight: 32}}>#</ScalableText>
+        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, flex: 1}}>Driver</ScalableText>
+        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, marginRight: 20}}>Wins</ScalableText>
+        <ScalableText style={{color: '#fff', height: 22, lineHeight: 20, textAlign: 'right'}}>Points</ScalableText>
+      </View>
+
+      <ListView dataSource={this.state.driverStandings} renderRow={(rowData) => <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('DriverCard', {driverId: rowData.Driver.driverId})}>
       <View style={styles.driver}>
         <View style={styles.avatarContainer}>
           <Image source={{
@@ -70,7 +78,7 @@ export default class DriverStandings extends React.Component {
           <ScalableText style={styles.points}>{rowData.points}</ScalableText>
         </View>
       </View>
-    </TouchableWithoutFeedback>}/>);
+    </TouchableWithoutFeedback>}/></View>);
   }
 }
 
