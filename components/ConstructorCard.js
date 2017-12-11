@@ -46,12 +46,12 @@ export default class ConstructorCard extends React.Component {
           }} style={styles.car}></Image>
         </View>
         <View style={{
-          flex: 1,
           flexDirection: 'row',
           marginHorizontal: 10
         }}>
           <View style={{
-            flex: 1, marginRight: 10
+            flex: 1,
+            marginRight: 10
           }}>
             <View style={{
               flex: 1,
@@ -65,12 +65,15 @@ export default class ConstructorCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <ScalableText style={{textAlign: 'right'}}>{this.state.constructorInfo.championship}</ScalableText>
+                <ScalableText style={{
+                  textAlign: 'right'
+                }}>{this.state.constructorInfo.championship}</ScalableText>
               </View>
             </View>
             <View style={{
               flex: 1,
-              flexDirection: 'row'
+              flexDirection: 'row',
+              marginTop: 36
             }}>
               <View style={{
                 flex: 4
@@ -80,7 +83,9 @@ export default class ConstructorCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <ScalableText style={{textAlign: 'right'}}>{this.state.constructorInfo.races}</ScalableText>
+                <ScalableText style={{
+                  textAlign: 'right'
+                }}>{this.state.constructorInfo.races}</ScalableText>
               </View>
             </View>
           </View>
@@ -90,7 +95,8 @@ export default class ConstructorCard extends React.Component {
           }}>
             <View style={{
               flex: 1,
-              flexDirection: 'row'
+              flexDirection: 'row',
+              marginBottom: 36
             }}>
               <View style={{
                 flex: 4
@@ -100,7 +106,9 @@ export default class ConstructorCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <ScalableText style={{textAlign:'right'}}>{this.state.constructorInfo.wins}</ScalableText>
+                <ScalableText style={{
+                  textAlign: 'right'
+                }}>{this.state.constructorInfo.wins}</ScalableText>
               </View>
             </View>
             <View style={{
@@ -115,7 +123,9 @@ export default class ConstructorCard extends React.Component {
               <View style={{
                 flex: 1
               }}>
-                <ScalableText style={{textAlign:'right'}}>{this.state.constructorInfo.polePosition}</ScalableText>
+                <ScalableText style={{
+                  textAlign: 'right'
+                }}>{this.state.constructorInfo.polePosition}</ScalableText>
               </View>
             </View>
           </View>
