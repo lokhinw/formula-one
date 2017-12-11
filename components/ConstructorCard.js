@@ -19,12 +19,9 @@ export default class ConstructorCard extends React.Component {
   }
   componentDidMount() {
     return fetch('https://bsbbycpjma.execute-api.eu-central-1.amazonaws.com/latest/f1/constructor/' + this.props.navigation.state.params.constructorId + '/details').then((response) => response.json()).then((responseJson) => {
-      let ds = new ListView.DataSource({
-        rowHasChanged: (r1, r2) => r1 !== r2
-      });
       this.setState({
         isLoading: false,
-        constructorInfo: ds.cloneWithRows(responseJson)
+        constructorInfo: responseJson
       }, function() {});
     }).catch((error) => {
       console.error(error);
@@ -41,22 +38,94 @@ export default class ConstructorCard extends React.Component {
         </View>
       );
     }
-    return ( <View style={styles.driver}>
-      <View style={{
-        flex: 1,
-        flexDirection: 'row'
-      }}>
-        <Image source={{
-          uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Cars/' + this.props.navigation.state.params.constructorId + '.jpg'
-        }} style={styles.car}></Image>
+    return (
+      <View style={styles.constructor}>
+        <View>
+          <Image source={{
+            uri: 'https://s3-eu-west-1.amazonaws.com/f1-storage/Cars/' + this.props.navigation.state.params.constructorId + '.jpg'
+          }} style={styles.car}></Image>
+        </View>
+        <View style={{
+          flex: 1,
+          flexDirection: 'row',
+          marginHorizontal: 10
+        }}>
+          <View style={{
+            flex: 1, marginRight: 10
+          }}>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                flex: 4
+              }}>
+                <ScalableText>World Championship:</ScalableText>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <ScalableText style={{textAlign: 'right'}}>{this.state.constructorInfo.championship}</ScalableText>
+              </View>
+            </View>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                flex: 4
+              }}>
+                <ScalableText>Total Races:</ScalableText>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <ScalableText style={{textAlign: 'right'}}>{this.state.constructorInfo.races}</ScalableText>
+              </View>
+            </View>
+          </View>
+          <View style={{
+            flex: 1,
+            marginLeft: 10
+          }}>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                flex: 4
+              }}>
+                <ScalableText>Total Wins:</ScalableText>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <ScalableText style={{textAlign:'right'}}>{this.state.constructorInfo.wins}</ScalableText>
+              </View>
+            </View>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                flex: 4
+              }}>
+                <ScalableText>Pole Position:</ScalableText>
+              </View>
+              <View style={{
+                flex: 1
+              }}>
+                <ScalableText style={{textAlign:'right'}}>{this.state.constructorInfo.polePosition}</ScalableText>
+              </View>
+            </View>
+          </View>
+        </View>
       </View>
-      <ScalableText>{this.state.constructorInfo.races}</ScalableText>
-
-    </View>);
+    );
   }
 }
 
-const { width } = Dimensions.get('window')
+const {width} = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   container: {
@@ -64,6 +133,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  constructor: {
+    flex: 1
   },
   car: {
     width: width,
