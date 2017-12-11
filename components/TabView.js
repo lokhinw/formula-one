@@ -1,14 +1,7 @@
 import React, {PureComponent} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {TabViewAnimated, TabBar, SceneMap} from 'react-native-tab-view';
-import DriverStandings from './DriverStandings';
-import ConstructorStandings from './ConstructorStandings';
 
-// TEMPORARY
-import DriverCard from './DriverCard';
-import RaceCard from './RaceCard';
-import ConstructorCard from './ConstructorCard';
-import RaceSchedule from './RaceSchedule';
 import DriverNavigator from './DriverNavigator';
 import RaceNavigator from './RaceNavigator';
 import ConstructorNavigator from './ConstructorNavigator';
@@ -18,20 +11,14 @@ const FirstRoute = () => <View style={[
     backgroundColor: '#fff'
   }
 ]}>
-  {/* <DriverStandings></DriverStandings> */}
   <DriverNavigator></DriverNavigator>
-  {/* <RaceSchedule></RaceSchedule> */}
-  {/* <RaceCard></RaceCard> */}
   {/* <RaceNavigator></RaceNavigator> */}
-  {/* <DriverCard driverId='hamilton'></DriverCard> */}
-  {/* <ConstructorCard constructorId='ferrari'></ConstructorCard> */}
 </View>;
 const SecondRoute = () => <View style={[
   styles.container, {
     backgroundColor: '#fff'
   }
 ]}>
-  {/* <ConstructorStandings></ConstructorStandings> */}
   <ConstructorNavigator></ConstructorNavigator>
 </View>;
 
