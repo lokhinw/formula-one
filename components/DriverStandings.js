@@ -90,7 +90,7 @@ export default class DriverStandings extends React.Component {
                 flex: 1,
                 flexDirection: 'row'
               }}>
-                <ScalableText style={styles.permanentNumber}>{rowData.Driver.permanentNumber}</ScalableText>
+                <ScalableText style={styles.permanentNumber}>{rowData.Driver.permanentNumber} </ScalableText>
                 <ScalableText style={styles.driverName}>{rowData.Driver.givenName} {rowData.Driver.familyName}</ScalableText>
               </View>
               <View style={{
