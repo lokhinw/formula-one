@@ -52,7 +52,8 @@ export default class RaceSchedule extends React.Component {
       <View style={{
         flex: 1,
         flexDirection: 'row',
-        marginTop: 10
+        marginTop: 10,
+        marginBottom: 10
       }}>
         <View style={{
           flex: 1,

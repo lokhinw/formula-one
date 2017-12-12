@@ -15,7 +15,8 @@ const RaceNavigator = StackNavigator({
 }, {
   headerMode: 'none',
   cardStyle: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    paddingTop: 24
   }
 });
 
