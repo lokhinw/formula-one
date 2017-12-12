@@ -22,7 +22,7 @@ const MainNavigator = TabNavigator({
     },
     style: {
       backgroundColor: '#181f26',
-      marginTop: 24
+      paddingTop: 24
     }
   }
 });

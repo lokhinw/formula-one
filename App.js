@@ -1,5 +1,7 @@
 import React from 'react';
+import {View, StatusBar} from 'react-native';
 import MainNavigator from './components/MainNavigator';
+import SideNavigator from './components/SideNavigator';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,7 +10,7 @@ export default class App extends React.Component {
   componentDidMount() {}
   render() {
     return (
-      <MainNavigator></MainNavigator>
+      <SideNavigator></SideNavigator>
     );
   }
 }
