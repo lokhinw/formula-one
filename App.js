@@ -1,5 +1,6 @@
 import React from 'react';
 import TabView from './components/TabView';
+import MainNavigator from './components/MainNavigator';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class App extends React.Component {
   componentDidMount() {}
   render() {
     return (
-      <TabView></TabView>
+      <MainNavigator></MainNavigator>
     );
   }
 }
