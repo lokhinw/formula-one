@@ -145,7 +145,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   constructor: {
-    flex: 1
+    flex: 1,
+    paddingBottom: 20
   },
   car: {
     width: width,

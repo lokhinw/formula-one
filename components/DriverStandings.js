@@ -45,7 +45,7 @@ export default class DriverStandings extends React.Component {
       );
     }
     return (
-      <View>
+      <View style={{paddingBottom: 20}}>
         <View style={{
           flexDirection: 'row',
           backgroundColor: '#25303a',
