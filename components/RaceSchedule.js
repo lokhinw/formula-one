@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, View, ActivityIndicator, TouchableWithoutFeedback, ListView} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ActivityIndicator,
+  TouchableWithoutFeedback,
+  ListView
+} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import ScalableText from 'react-native-text';
 

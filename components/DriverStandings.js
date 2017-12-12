@@ -1,8 +1,6 @@
 import React from 'react';
 import {
   StyleSheet,
-  Alert,
-  Text,
   View,
   ActivityIndicator,
   ListView,

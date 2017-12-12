@@ -1,6 +1,5 @@
 import React from 'react';
 import {DrawerNavigator} from 'react-navigation';
-
 import MainNavigator from './MainNavigator'
 import RaceNavigator from './RaceNavigator'
 

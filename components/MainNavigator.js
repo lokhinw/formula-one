@@ -1,8 +1,6 @@
 import React from 'react';
 import {TabNavigator} from 'react-navigation';
-
 import DriverNavigator from './DriverNavigator';
-// import RaceNavigator from './RaceNavigator';
 import ConstructorNavigator from './ConstructorNavigator';
 
 const MainNavigator = TabNavigator({

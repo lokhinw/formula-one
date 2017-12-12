@@ -1,7 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {StackNavigator} from 'react-navigation';
-
 import DriverStandings from './DriverStandings';
 import DriverCard from './DriverCard';
 
